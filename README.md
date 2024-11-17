@@ -93,41 +93,6 @@ int main() {
 }
 ```
 
-## Functions
-
-### `Vector2D Class`
-
-#### Constructor
-
-- `Vector2D(float x, float y)`: Creates a vector with the specified `x` and `y` values.
-
-#### Methods
-
-- `Vector2D operator+(const Vector2D& other) const`: Adds two vectors.
-- `Vector2D operator-(const Vector2D& other) const`: Subtracts two vectors.
-- `Vector2D operator*(float scalar) const`: Multiplies the vector by a scalar.
-- `Vector2D operator/(float scalar) const`: Divides the vector by a scalar.
-- `float dot(const Vector2D& other) const`: Calculates the dot product of two vectors.
-- `float magnitude() const`: Returns the magnitude (length) of the vector.
-- `Vector2D normalize() const`: Normalizes the vector to a unit vector.
-- `void print() const`: Prints the vector in the format `(x, y)`.
-
-### `Physics Class`
-
-#### Functions
-
-- `static Vector2D calculateForce(float mass, const Vector2D& acceleration)`: Calculates the force based on mass and acceleration.
-- `static Vector2D calculateDisplacement(const Vector2D& initialPosition, const Vector2D& velocity, const Vector2D& acceleration, float time)`: Calculates the displacement using kinematic equations.
-- `static float calculateKineticEnergy(float mass, const Vector2D& velocity)`: Calculates the kinetic energy.
-- `static float calculatePotentialEnergy(float mass, float height, float gravity)`: Calculates the potential energy.
-- `static float calculateWork(const Vector2D& force, const Vector2D& displacement)`: Calculates the work done based on force and displacement.
-- `static float calculateGravitationalForce(float mass1, float mass2, float distance)`: Calculates the gravitational force between two masses.
-- `static Vector2D calculateMomentum(float mass, const Vector2D& velocity)`: Calculates the momentum of an object.
-- `static Vector2D calculateImpulse(const Vector2D& force, float time)`: Calculates the impulse given force and time.
-- `static Vector2D calculateElasticCollisionVelocity(float m1, const Vector2D& v1, float m2, const Vector2D& v2)`: Calculates the velocity after an elastic collision.
-- `static float calculateCentripetalForce(float mass, const Vector2D& velocity, float radius)`: Calculates the centripetal force required for circular motion.
-- `static bool checkCollision(const Vector2D& position1, float radius1, const Vector2D& position2, float radius2)`: Checks if two objects are colliding.
-
 ## License
 
 `Physica` is licensed under the MIT License. See the LICENSE file for more details.
