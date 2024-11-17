@@ -173,6 +173,118 @@ namespace physica {
         static float calculateMechanicalAdvantage(float loadArm, float effortArm) {
             return loadArm / effortArm;
         }
+
+        // Calculate electric force using Coulomb's law (F = k * |q1 * q2| / r^2)
+        static float calculateElectricForce(float charge1, float charge2, float distance, float k = 8.9875e9f) {
+            return k * std::abs(charge1 * charge2) / (distance * distance);
+        }
+
+        // Calculate electric field (E = F / q)
+        static float calculateElectricField(float force, float charge) {
+            return force / charge;
+        }
+
+        // Calculate potential difference (V = W / q)
+        static float calculatePotentialDifference(float work, float charge) {
+            return work / charge;
+        }
+
+        // Calculate capacitance of a parallel plate capacitor (C = ε₀ * A / d)
+        static float calculateCapacitance(float area, float distance, float epsilon = 8.854e-12f) {
+            return epsilon * area / distance;
+        }
+
+        // Calculate charge stored in a capacitor (Q = C * V)
+        static float calculateChargeStored(float capacitance, float voltage) {
+            return capacitance * voltage;
+        }
+
+        // Calculate the period of a simple pendulum (T = 2π * √(l / g))
+        static float calculatePendulumPeriod(float length, float gravity = 9.81f) {
+            return 2.0f * M_PI * std::sqrt(length / gravity);
+        }
+
+        // Calculate power (P = W / t)
+        static float calculatePower(float work, float time) {
+            return work / time;
+        }
+
+        // Calculate resistance using Ohm's Law (R = V / I)
+        static float calculateResistance(float voltage, float current) {
+            return voltage / current;
+        }
+
+        // Calculate the electric current (I = V / R)
+        static float calculateCurrent(float voltage, float resistance) {
+            return voltage / resistance;
+        }
+
+        // Calculate the magnetic force on a charged particle moving in a magnetic field (F = q * v * B * sin(θ))
+        static float calculateMagneticForce(float charge, const Vector2D& velocity, float magneticField, float angle) {
+            return charge * velocity.magnitude() * magneticField * std::sin(angle);
+        }
+
+        // Calculate the magnetic field due to a long straight current-carrying wire (B = μ₀ * I / (2π * r))
+        static float calculateMagneticFieldWire(float current, float distance, float mu = 4.0e-7f * M_PI) {
+            return (mu * current) / (2.0f * M_PI * distance);
+        }
+
+        // Calculate the Lorentz force (F = q * (E + v × B))
+        static Vector2D calculateLorentzForce(float charge, const Vector2D& velocity, const Vector2D& electricField, const Vector2D& magneticField) {
+            // Calculate the magnetic force component (v × B) and multiply by the charge
+            float crossProduct = velocity.cross(magneticField);
+            return electricField * charge + Vector2D(0, crossProduct) * charge;
+        }
+
+        // Calculate the self-inductance of a coil (L = μ₀ * N² * A / l)
+        static float calculateSelfInductance(int turns, float area, float length, float mu = 4.0e-7f * M_PI) {
+            return mu * turns * turns * area / length;
+        }
+
+        // Calculate the frequency of a resonant LC circuit (f = 1 / (2π * √(L * C)))
+        static float calculateResonantFrequency(float inductance, float capacitance) {
+            return 1.0f / (2.0f * M_PI * std::sqrt(inductance * capacitance));
+        }
+
+        // Calculate the critical velocity for a satellite to stay in orbit (v = √(G * M / r))
+        static float calculateOrbitalVelocity(float mass, float radius, float G = 6.67430e-11f) {
+            return std::sqrt(G * mass / radius);
+        }
+
+        // Calculate the moment of inertia for a point mass (I = m * r^2)
+        static float calculateMomentOfInertiaPointMass(float mass, float radius) {
+            return mass * radius * radius;
+        }
+
+        // Calculate the speed of a sound wave in air (v = √(γ * R * T))
+        static float calculateSoundSpeed(float gamma = 1.4f, float gasConstant = 287.05f, float temperature = 293.15f) {
+            return std::sqrt(gamma * gasConstant * temperature);
+        }
+
+        // Calculate the power of a sound wave (P = I * A)
+        static float calculateSoundPower(float intensity, float area) {
+            return intensity * area;
+        }
+
+        // Calculate the intensity of a sound wave (I = P / A)
+        static float calculateSoundIntensity(float power, float area) {
+            return power / area;
+        }
+
+        // Calculate the refractive index of a medium (n = c / v)
+        static float calculateRefractiveIndex(float speedOfLight = 3.0e8f, float speedInMedium) {
+            return speedOfLight / speedInMedium;
+        }
+
+        // Calculate the focal length of a lens (1/f = (1/do) + (1/di))
+        static float calculateFocalLength(float objectDistance, float imageDistance) {
+            return 1.0f / ((1.0f / objectDistance) + (1.0f / imageDistance));
+        }
+
+        // Calculate the heat conduction rate (Q = k * A * (T2 - T1) / d)
+        static float calculateHeatConduction(float thermalConductivity, float area, float temperatureDifference, float thickness) {
+            return thermalConductivity * area * temperatureDifference / thickness;
+        }
     };
 }
 
