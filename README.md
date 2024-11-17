@@ -18,9 +18,6 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
-- [Functions](#functions)
-  - [Vector2D Class](#vector2d-class)
-  - [Physics Class](#physics-class)
 - [License](#license)
 
 ## Installation
