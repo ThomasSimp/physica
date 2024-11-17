@@ -30,7 +30,7 @@
 To use `Physica` in your C++ projects, simply clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/physica.git
+git clone https://github.com/ThomasSimp/physica.git
 ```
 
 ### Build the Library
